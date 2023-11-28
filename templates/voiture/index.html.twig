@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VoitureController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper p-2 m-2 text-center border-5 ">
+
+    <p>voici la page de la voiture numéro : {{id}}</p>
+    <h1>Voiture : {{ voiture.nom }}</h1>
+    
+    <p>Description: {{ voiture.description }}</p>
+    <p>Prix : {{ voiture.prix }} $</p>
+    <p>Date de Création : {{ voiture.dateCreation|date("d/mY") }} </p>
+    <p>{{ voiture.dateCreation|time_diff(locale='fr') }} </p>
+</div>
+{% endblock %}
